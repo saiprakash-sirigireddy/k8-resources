@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: multi-containers
+  namespace: expense
+spec:
+  # one pod can contain multiple containers
+  containers:
+  - name: nginx # name of our container
+    image: nginx # actual image name
+
+  - name: almalinux
+    image: almaliux:9
+    command: ["sleep", "1000"]
